@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border-radius: border-box;
+    }
+  body { 
+        background-repeat:no repeat;
+        background-size:100% 100%;
+        background-image: cover;
+        height:0%;
+        justify-items: center;
+       background-color:  #0f172a;
+        }
+   .login-body{
+                 height:470px;
+                 max-width: 410px;
+                  margin: 00px;
+                  margin: 50px auto 0;
+                  padding-top: 8px;
+                  background-color: white;
+                 border: solid 2px black;  
+                transition: border-color 0.4s ease;
+                box-shadow: 0px 6px 10px rgba(70, 70, 72, 0.2);
+               }
+   .form_name_decor{
+      margin: 5px;  
+      margin-bottom: 20px; 
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   .form_decor{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    padding-left: 15px;
+     }
+      input{
+    margin: 5px;
+    height: 28px;
+    width: 340px;
+    border-radius: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: border-color 0.4s ease;
+    box-shadow: 0px 4px 8px rgba(127, 128, 133, 0.2);
+   }
+   h5{
+    margin-left: 90px;
+   }
+
+   button{
+    height:35px ;
+    width: 300px;
+    text-decoration: 20px bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+    margin-left: 43px;
+    display:inline-block;
+    background-color: #3e7679;
+    color: whitesmoke;
+     transition: border-color 0.4s ease;
+    box-shadow: 0px 4px 8px rgba(119, 119, 121, 0.2);
+   }
+     button:hover{
+                transform: scale(1.05);
+            }
+            @keyframes fadeIn{
+                form{
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+</style>
+<body>
+    <div class="login-body">
+        <form action="/signup" method="POST">
+        <div class="form_name_decor"><h1>Sign UP</h1></div>
+       <div class="form_decor">
+        Name<input type="text" name="username"  id="username" required/><br><br>
+        Email<input type="email" name="emails"id="emails" required/><br><br>
+        Password<input type="text" name="passw" autocomplete="new-password" id="passw" required/><br><br>
+        Confirm Password<input type="password" name="confirmpass" autocomplete="new-password"  id="confirmpass" required >
+      </div>
+        <div id="sign_btn" name="sign_btn"><button id="submit" >Sing Up</button>
+           <br><br> <h5>Already have an account ? <a href="/loginpage">Login</a></h5> 
+            </div>
+     </form>
+     <script src="signup.js"></script>
+    </body>

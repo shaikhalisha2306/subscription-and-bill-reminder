@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bill Reminder UI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='dashnewbill_details.css') }}">
+
+</head>
+<style>
+body{
+    background-color:  #0f172a;
+    font-family: 'Inter', -apple-system, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding:20px;
+    color: white;
+    
+}
+
+.card{
+    width: 100%;
+     max-width: 400px; /* Mobile App dimensions */
+    height: 460px;
+     color: aliceblue;
+    background: #1e293b;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+input,select{
+    justify-content: center;
+    align-items: center;
+    
+    margin:10px;
+}
+
+#btn1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 10px;
+    height: 35px;
+    width: 80px;
+}  
+label{
+    color: aliceblue;
+    margin-left: 10px;
+}
+#back-btn{
+    margin: 10px;
+}
+
+   
+</style>
+<body>
+<div class="card">
+    
+      <a href="dashboard">  
+ <button id="back-btn">⬅ </button> 
+ </a>  
+<form id="billform" action="/add_bill" method="POST">
+
+<label>Bill Name</label>
+<input type="text" name="bill_name" required>
+
+<label>Category</label>
+<select name="category">
+<option>Subscriptions</option>
+<option>Utilities</option>
+<option>Shopping</option>
+</select>
+
+<label>Bill Amount</label>
+<input type="number" name="amount" required>
+
+<label>Due Date</label>
+<input type="date" name="due" required>
+
+<button id="btn1" type="submit">SAVE</button>
+
+</form>
+</div>
+
+</body>
+
+</html>

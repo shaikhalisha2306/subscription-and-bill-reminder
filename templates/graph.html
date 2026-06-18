@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Graph Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+body{
+    background-color:  #0f172a;
+    font-family: 'Inter', -apple-system, sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding:20px;
+}
+
+.card{
+    width: 100%;
+     max-width: 400px; /* Mobile App dimensions */
+    color: aliceblue;
+    background: #1e293b;
+    
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+button{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    font-size: 30px;
+    margin: 8px;
+    height: 30px;
+    width: 30px;
+}  
+
+   
+</style>
+<head>
+
+</head>
+
+<body>
+    <div class="card">
+<a href="/dashboard">
+
+    <button>⬅ </button>
+</a>
+
+<h2>My Bills Graph</h2>
+<img src="/histogram" 
+     style="width:90%; max-width:400px; background:white; margin-bottom: 10px; border-radius:10px;">
+     </div>
+</script>
+<script src="{{ url_for('static', filename='dash2.js') }}"></script>
+</body>
+</html>

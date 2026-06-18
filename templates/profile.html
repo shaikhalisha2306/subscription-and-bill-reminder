@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border-radius: border-box;
+    }
+  body { 
+        background-repeat:no repeat;
+       background-size:100% 100%;
+       background-image: cover;
+        height:0%;
+        background-color:  #0f172a;
+        }
+   .profile-body{
+                 height:300px;
+                 max-width: 340px;
+                  margin: 40px;
+                  margin: 100px auto 0;
+                  border-radius: 20px;
+                  padding:0px;
+                  padding-top: 8px;
+                  background-color: white;
+                 justify-content:center;
+                 align-items: center; 
+                 text-align: center;
+                 border: solid 2px black;  
+                transition: border-color 0.4s ease;
+                box-shadow: 0px 6px 10px rgba(70, 70, 72, 0.2);
+               }
+               .backbtn{
+                 text-align: center;
+                 display: flex;
+                font-size: 20px;
+                margin: 20px;
+        
+               }
+</style>
+<body>
+<div class="profile-body">
+ <div class="backbtn">
+  <a href="/dashboard">  
+ <button><h3>⬅</h3> </button> 
+ </a>  </div>
+<h1>PROFILE</h1><br>
+<h2>👤 Welcome {{ username }}</h2><br>
+<h3>📧 Email: {{ email }}</h3><br>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border-radius: border-box;
+    }
+  body { 
+        background-repeat:no repeat;
+       background-size:100% 100%;
+       background-image: cover;
+        height:0%;
+       background-color:  #0f172a;
+        }
+   .login-body{
+                 height:300px;
+                 max-width: 340px;
+                  margin: 400px;
+                  margin: 100px auto 0;
+                  border-radius: 20px;
+                  padding:0px;
+                  padding-top: 40px;
+                  background-color: white;
+                 justify-content:center;
+                 align-items: center; 
+                 text-align: center;
+                 border: solid 2px black;  
+                transition: border-color 0.4s ease;
+                box-shadow: 0px 6px 10px rgba(70, 70, 72, 0.2);
+               }
+   .form_name_decor{
+      margin: 7px;  
+      margin-bottom: 23px;    
+   }
+   input{
+    margin: 10px;
+    height: 26px;
+    width: 250px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     transition: border-color 0.4s ease;
+    box-shadow: 0px 4px 8px rgba(127, 128, 133, 0.2);
+   }
+   i{
+    border: 2px solid rgb(40, 39, 39);
+    padding: 5px;
+   }
+
+   /* 🔥 Shake animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
+
+/* Apply shake */
+.shake {
+    animation: shake 0.4s ease;
+}
+   button{
+    height:35px ;
+    width: 250px;
+    text-decoration: 7px bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #296d44;
+    color: whitesmoke;
+     transition: border-color 0.4s ease;
+    box-shadow: 0px 4px 8px rgba(119, 119, 121, 0.2);
+   }
+     button:hover{
+                transform: scale(1.05);
+            }
+            @keyframes fadeIn{
+                form{
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+</style>
+<body>
+    
+    <div class="login-body">
+        <div id="errorBox" style="display:none;"></div>
+        <form action="/login" method="POST">
+        <div class="form_name_decor"><h1>Login Form</h1></div>
+        <label for="email"><i class="fa-solid fa-user"></i>
+        <input type="text" id="emails" name="emails"  placeholder="  Enter email" required>
+        </label>
+        <label for="password"><i class="fa-solid fa-eye"></i>
+        <input type="text" autocomplete="new-password" name="passw" id="passw"  placeholder="  Enter password" required>
+       <!-- <input type="checkbox" onclick="myfunction()">show password-->
+        </label>
+        <div id="sign_btn" name="login_btn"><button type="submit">Login</button>    
+      </div><br>
+      <h5>Don't have an account ? <a href="/siguppage">Signup</a></h5>
+     </form>
+    
+    </div>
+    </body>
+    <script>
+    const error = {{ error | tojson | default(false) }};
+
+    if (error) {
+        const box = document.getElementById("errorBox");
+        const loginCard = document.querySelector(".login-body"); // 👈 your form box
+
+        // show error message
+        box.style.display = "block";
+        box.innerText = "❌ Invalid Email or Password";
+
+        box.style.background = "#ff4d4d";
+        box.style.color = "white";
+        box.style.padding = "10px";
+        box.style.borderRadius = "8px";
+        box.style.textAlign = "center";
+        box.style.marginBottom = "10px";
+
+        // 🔥 SHAKE EFFECT
+        loginCard.classList.add("shake");
+
+        // remove class so it can shake again next time
+        setTimeout(() => {
+            loginCard.classList.remove("shake");
+        }, 400);
+
+        // ⏱️ hide after 2 sec
+        setTimeout(() => {
+            box.style.display = "none";
+        }, 2000);
+    }
+</script>
+</script>
+
+    </html>

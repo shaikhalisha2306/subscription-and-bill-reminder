@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubTrack - Dark Mode</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dash2.css') }}">
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="main-header">
+            <div class="summary">
+                      <span>Total Monthly Expenses</span>
+                        <h1 id="totalAmount">$0</h1>
+
+    <input type="number" id="salaryInput" placeholder="Enter Salary">
+    <button id="saveSalary">Total Salary</button>
+
+    <p id="balance"></p>
+</div>
+            
+        </header>
+
+              <main class="bill-list">
+            <h2 class="section-title" id="billcontainer">My Bills</h2>
+         <nav class="tabs">
+    <button class="tab active" data-type="upcoming">Upcoming</button>
+    <button class="tab" data-type="overdue">Overdue</button>
+    <button class="tab" data-type="paid">Paid</button>
+</nav>
+<div id="billList"></div>
+                 
+        </nav>
+
+      
+        </main>
+        <footer class="bottom-nav">
+            <img id="chart"  >
+            <a href="/graph">
+           <button class="nav-item" onclick="openGraph() ">📊 </button>
+           </a>
+           <a href="/details">
+            <button class="nav-item" class="add-btn" >+</button>
+            </a>
+           <a href="/calendar"> 
+           <button class="nav-item">📅</button>
+           </a> 
+           <a href='/profile'>
+             <button class="nav-item" >👤</button>
+            </a>
+            
+        </footer>
+    </div>
+
+<script src="{{ url_for('static', filename='dash2.js') }}"></script>
+</body>
+
+
+</html>
